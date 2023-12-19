@@ -1,0 +1,15 @@
+.statistics {
+  width: 700px;
+  height: auto;
+  background-color: rgb(250, 249, 238);
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.166;
+  text-align: center;
+  padding: 60px 20px;
+}
