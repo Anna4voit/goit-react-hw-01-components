@@ -2,27 +2,16 @@ import PropTypes from 'prop-types';
 import css from './StatisticsList.module.css';
 import { getRandomHexColor } from './RandomColor';
 
-export const StatisticsList = ({ stats }) => {
+export const StatisticsList = ({ label, percentage }) => {
   return (
-    <ul className={css.stat_list}>
-      {stats.map(item => (
-        <li
-          className={css.item}
-          key={item.id}
-          style={{ backgroundColor: getRandomHexColor() }}
-        >
-          <span className={css.label}>{item.label}</span>
-          <span className={css.percentage}>{item.percentage}%</span>
-        </li>
-      ))}
-    </ul>
+    <li className={css.item} style={{ backgroundColor: getRandomHexColor() }}>
+      <span className={css.label}>{label}</span>
+      <span className={css.percentage}>{percentage}%</span>
+    </li>
   );
 };
 
 StatisticsList.propTypes = {
-  item: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
-  }),
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
 };

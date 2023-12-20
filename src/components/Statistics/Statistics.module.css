@@ -13,3 +13,7 @@
   text-align: center;
   padding: 60px 20px;
 }
+
+.stat_list {
+  display: flex;
+}
