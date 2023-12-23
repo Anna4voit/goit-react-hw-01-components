@@ -23,3 +23,8 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background: #a3e2f1;
 }
+
+.cell {
+  font-size: 26px;
+  padding: 20px;
+}

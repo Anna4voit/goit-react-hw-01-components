@@ -1,4 +1,3 @@
-import { TransactionHistoryItem } from 'components/TransactionHistoryItem/TransactionHistoryItem';
 import PropTypes from 'prop-types';
 import css from './TransactionHistory.module.css';
 
@@ -13,14 +12,16 @@ export const TransactionsHistory = ({ transactions }) => {
         </tr>
       </thead>
       <tbody>
-        {transactions.map(({ id, type, amount, currency }) => (
-          <TransactionHistoryItem
-            key={id}
-            type={type}
-            amount={amount}
-            currency={currency}
-          />
-        ))}
+        {transactions.map(({ id, type, amount, currency }) => {
+          let newType = type[0].toUpperCase() + type.slice(1);
+          return (
+            <tr key={id}>
+              <td className={css.cell}>{newType}</td>
+              <td className={css.cell}>{amount}</td>
+              <td className={css.cell}>{currency}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
